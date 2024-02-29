@@ -2,34 +2,34 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Salida } from '../modelos/salida.model';
 import { Observable } from 'rxjs';
+import baserUrl from '../helper';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServicioSalidasService {
 
-  private URL = 'http://localhost:8090/v0';
   salidas!:Salida[];
 
   constructor(private httpClient:HttpClient) { }
 
   getSalidas():Observable<Salida[]>{
-    return this.httpClient.get<Salida[]>(`${this.URL}/salidas`);
+    return this.httpClient.get<Salida[]>(`${baserUrl}/salidas`);
   }
 
   getSalida(id:number){
-    return this.httpClient.get(`${this.URL}/salidas/`+id);
+    return this.httpClient.get(`${baserUrl}/salidas/`+id);
   }
 
   updateSalida(salida:Salida){
-    return this.httpClient.put(`${this.URL}/salidas/`+salida.id, salida);
+    return this.httpClient.put(`${baserUrl}/salidas/`+salida.id, salida);
   }
 
   createSalida(salida:Salida){
-    return this.httpClient.put(`${this.URL}/salidas`, salida);
+    return this.httpClient.post(`${baserUrl}/salidas`, salida);
   }
 
   deleteSalida(id:number){
-    return this.httpClient.put(`${this.URL}/salidas/`+id, id);
+    return this.httpClient.delete(`${baserUrl}/salidas/`+id);
   }
 }

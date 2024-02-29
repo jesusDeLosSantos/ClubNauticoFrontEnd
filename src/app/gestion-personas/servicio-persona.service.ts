@@ -2,34 +2,34 @@ import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Persona } from '../modelos/persona.model';
+import baserUrl from '../helper';
 
 @Injectable({
   providedIn: 'root'
 })
 export class ServicioPersonaService {
 
-  private URL = 'http://localhost:8090/v0';
   personas!:Persona[];
 
   constructor(private httpClient:HttpClient) { }
 
   getPersonas():Observable<Persona[]>{
-    return this.httpClient.get<Persona[]>(`${this.URL}/personas`);
+    return this.httpClient.get<Persona[]>(`${baserUrl}/personas`);
   }
 
   getPersona(id:number){
-    return this.httpClient.get(`${this.URL}/personas/`+id);
+    return this.httpClient.get(`${baserUrl}/personas/`+id);
   }
 
   updatePersona(persona:Persona){
-    return this.httpClient.put(`${this.URL}/personas/`+persona.id, persona);
+    return this.httpClient.put(`${baserUrl}/personas/`+persona.id, persona);
   }
 
   createPersona(persona:Persona){
-    return this.httpClient.put(`${this.URL}/personas`, persona);
+    return this.httpClient.post(`${baserUrl}/personas`, persona);
   }
 
   deletePersona(id:number){
-    return this.httpClient.put(`${this.URL}/personas/`+id, id);
+    return this.httpClient.delete(`${baserUrl}/personas/`+id);
   }
 }

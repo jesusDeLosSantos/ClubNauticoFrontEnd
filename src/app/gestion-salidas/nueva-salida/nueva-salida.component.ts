@@ -11,8 +11,8 @@ import { Salida } from 'src/app/modelos/salida.model';
 export class NuevaSalidaComponent {
 
   salida!:Salida;
-  fechaForm!:string;
-  horaForm!:string;
+  fechaSalidaForm!:string;
+  fechaEntradaForm!:string;
   destinoForm!:string;
   patronForm!:string;
   barcoForm!:string;
@@ -22,7 +22,7 @@ export class NuevaSalidaComponent {
 
   guardarSalida(){
     alert(this.destinoForm);
-    this.salida = new Salida(this.fechaForm, this.horaForm, this.destinoForm/*, this.patronForm, this.barcoForm*/);
+    this.salida = new Salida(this.fechaSalidaForm, this.fechaEntradaForm, this.destinoForm/*, this.patronForm, this.barcoForm*/);
     this.servicioSalida.createSalida(this.salida);
     this.router.navigate(["/salidas"]);
  }
