@@ -1,0 +1,31 @@
+<br><br>
+<table mat-table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">NOMBRE</th>
+        <th scope="col">MATRÍCULA</th>
+        <th scope="col">NÚMERO DE ATRAQUE</th>
+        <th scope="col">CUOTA</th>
+        <th scope="col">DUEÑO</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let b of barcos">
+            <td>{{b.nombre}}</td>
+            <td>{{b.matricula}}</td>
+            <td>{{b.atraque}}</td>
+            <td>{{b.cuota}}</td>
+            <td>{{b.dueno}}</td>
+            <td>
+              <button mat-button [routerLink]="['/barco', b.id]">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-button (click)="deleteBarco(b.id)">
+                <mat-icon color="warn">delete</mat-icon>
+              </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br><br>
+&nbsp;&nbsp;&nbsp; <button mat-raised-button color="primary" [routerLink]="['/barco']">Añadir</button>

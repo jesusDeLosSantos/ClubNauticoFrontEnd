@@ -1,0 +1,31 @@
+<br><br>
+<table mat-table class="table table-striped">
+    <thead>
+      <tr>
+        <th scope="col">FECHA</th>
+        <th scope="col">HORA</th>
+        <th scope="col">DESTINO</th>
+        <th scope="col">PATRÓN</th>
+        <th scope="col">BARCO</th>
+      </tr>
+    </thead>
+    <tbody>
+        <tr *ngFor="let s of salidas">
+            <td>{{s.fecha}}</td>
+            <td>{{s.hora}}</td>
+            <td>{{s.destino}}</td>
+            <td>{{s.patron}}</td>
+            <td>{{s.barco}}</td>
+            <td>
+              <button mat-button [routerLink]="['/salida', s.id]">
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button mat-button (click)="deleteSalida(s.id)">
+                <mat-icon color="warn">delete</mat-icon>
+              </button>
+            </td>
+        </tr>
+    </tbody>
+</table>
+<br><br>
+&nbsp;&nbsp;&nbsp; <button mat-raised-button color="primary" [routerLink]="['/salida']">Añadir</button>

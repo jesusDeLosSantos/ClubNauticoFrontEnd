@@ -1,0 +1,31 @@
+<br><br>
+<div class = "bootstrap-wrapper">
+        <div class = "col-md-8 offset-md-2">
+          <mat-card>
+            <br><br>
+            <h1 class = "text-center">Detalles del Barco</h1>
+            <br><br>
+                    <mat-label class = "full-width">Nombre</mat-label>
+                    <input required class = "full-width" [(ngModel)]="barco.nombre" placeholder="Introduzca su nombre de usuario">
+                <br><br>
+                    <mat-label class = "full-width">Matrícula</mat-label>
+                    <input required class = "full-width" [(ngModel)]="barco.matricula" matInput placeholder="Introduzca su nombre de usuario">
+                <br><br>
+                    <mat-label class = "full-width">Número de atraque</mat-label>
+                    <input required class = "full-width" [(ngModel)]="barco.atraque" matInput placeholder="Introduzca su contraseña">
+                <br><br>
+                    <mat-label class = "full-width">Cuota</mat-label>
+                    <input required class = "full-width" [(ngModel)]="barco.cuota" matInput placeholder="Introduzca su nombre de usuario">
+                <br><br>
+                    <mat-label class = "full-width">Dueño</mat-label>
+                    <input required class = "full-width" [(ngModel)]="barco.dueno" placeholder="Introduzca su contraseña">
+                <br><br>
+    
+                <br><br><br><br>
+              <div class = "container text-center">
+                <button type = "submit" mat-raised-button color="primary" (click)="guardarBarco()">Guardar barco</button>
+              </div>
+
+          </mat-card>
+        </div>
+  </div>

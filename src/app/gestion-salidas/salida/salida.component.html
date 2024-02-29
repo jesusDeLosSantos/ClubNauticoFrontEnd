@@ -1,0 +1,31 @@
+<br><br>
+<div class = "bootstrap-wrapper">
+        <div class = "col-md-8 offset-md-2">
+          <mat-card>
+            <br><br>
+            <h1 class = "text-center">Detalles de la Salida</h1>
+            <br><br>
+                    <mat-label class = "full-width">Fecha</mat-label>
+                    <input required class = "full-width" [(ngModel)]="salida.fecha" placeholder="Introduzca su nombre de usuario">
+                <br><br>
+                    <mat-label class = "full-width">Hora</mat-label>
+                    <input required class = "full-width" [(ngModel)]="salida.hora" matInput placeholder="Introduzca su nombre de usuario">
+                <br><br>
+                    <mat-label class = "full-width">Destino</mat-label>
+                    <input required class = "full-width" [(ngModel)]="salida.destino" matInput placeholder="Introduzca su contraseña">
+                <br><br>
+                    <mat-label class = "full-width">Patron</mat-label>
+                    <input required class = "full-width" [(ngModel)]="salida.patron" matInput placeholder="Introduzca su nombre de usuario">
+                <br><br>
+                    <mat-label class = "full-width">Barco</mat-label>
+                    <input required class = "full-width" [(ngModel)]="salida.barco" placeholder="Introduzca su contraseña">
+                <br><br>
+    
+                <br><br><br><br>
+              <div class = "container text-center">
+                <button type = "submit" mat-raised-button color="primary" (click)="guardarSalida()">Guardar salida</button>
+              </div>
+
+          </mat-card>
+        </div>
+  </div>

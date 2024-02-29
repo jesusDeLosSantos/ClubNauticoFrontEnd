@@ -1,0 +1,35 @@
+<br><br>
+<div class = "bootstrap-wrapper">
+        <div class = "col-md-8 offset-md-2">
+          <mat-card>
+            <br><br>
+            <h1 class = "text-center">Detalles del Socio</h1>
+            <br><br>
+                    <mat-label class = "full-width">DNI</mat-label>
+                    <input required class = "full-width" [(ngModel)]="dniForm" placeholder="Introduzca su nombre de usuario">
+                <br><br>
+                    <mat-label class = "full-width">Nombre</mat-label>
+                    <input required class = "full-width" [(ngModel)]="nombreForm" matInput placeholder="Introduzca su nombre de usuario">
+                <br><br>
+                    <mat-label class = "full-width">Apellidos</mat-label>
+                    <input required class = "full-width" [(ngModel)]="apellidosForm" matInput placeholder="Introduzca su contraseña">
+                <br><br>
+                    <mat-label class = "full-width">Correo</mat-label>
+                    <input required class = "full-width" [(ngModel)]="correoForm" matInput placeholder="Introduzca su nombre de usuario">
+                <br><br>
+                    <mat-label class = "full-width">Teléfono</mat-label>
+                    <input required class = "full-width" [(ngModel)]="telefonoForm" placeholder="Introduzca su contraseña">
+                <br><br>
+                <section class="section">
+                    <mat-checkbox [(ngModel)]="socioForm">Socio</mat-checkbox> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+                    <mat-checkbox [(ngModel)]="patronForm">Patrón</mat-checkbox>
+                  </section>
+    
+                <br><br><br><br>
+              <div class = "container text-center">
+                <button type = "submit" mat-raised-button color="primary" (click)="guardarPersona()">Guardar usuario</button>
+              </div>
+
+          </mat-card>
+        </div>
+  </div>
